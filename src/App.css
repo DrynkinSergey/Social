@@ -1,9 +1,42 @@
 body {
-  color: #fff;
-  background-color: black;
+  background-color: white;
 }
-.App{
+a{
+  color: white;
+  text-decoration: none;
+  padding-left: 20px;
+  font-size: 16px;
+}
+.app-wrapper{
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
+  grid-template-areas:
+  "header header"
+  "nav content";
+  max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
-  padding-top: 40px;
+}
+
+.header{
+  grid-area: header;
+  background-color: blue;
+}
+.header img{
+  width: 150px;
+}
+.nav{
+  grid-area: nav;
+  background-color: blue;
+  height: 100vh;
+}
+.content{
+  grid-area: content;
+  background-color: white;
+
+
+}
+.content  img{
+  width: 100%;
 }
