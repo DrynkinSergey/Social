@@ -19,24 +19,4 @@ a{
   margin: 0 auto;
 }
 
-.header{
-  grid-area: header;
-  background-color: blue;
-}
-.header img{
-  width: 150px;
-}
-.nav{
-  grid-area: nav;
-  background-color: blue;
-  height: 100vh;
-}
-.content{
-  grid-area: content;
-  background-color: white;
 
-
-}
-.content  img{
-  width: 100%;
-}
