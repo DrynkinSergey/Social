@@ -8,9 +8,8 @@ const App =() => {
     <div className="app-wrapper">
         <Header/>
         <Navbar/>
-        <div>
+        <div className="app-wrapper-content">
             <Profile/>
-            <MyPosts/>
         </div>
 
     </div>

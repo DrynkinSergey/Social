@@ -7,6 +7,7 @@ const Post = (props) => {
         <div className={s.post}>
             <img className={s.avatar} src="https://media.proglib.io/wp-uploads/2018/03/EzgdmaCQuT84bgDL4fhXZS.jpg" alt=""/>
             {props.message}
+            <div>likes <span className={s.count}>{props.likesCount}</span></div>
         
         </div>
 
