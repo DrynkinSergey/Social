@@ -6,19 +6,19 @@ const Navbar = () =>{
         <div>
         <nav className={s.nav}>
             <div>
-                <a href="#">Profile</a>
+                <a href="#">Профиль</a>
             </div>
             <div>
-                <a href="#">Messages</a>
+                <a href="#">Сообщения</a>
             </div>
             <div>
-                <a href="#">News</a>
+                <a href="#">Новости</a>
             </div>
             <div>
-                <a href="#">Music</a>
+                <a href="#">Музыка</a>
             </div>
             <div>
-                <a href="#">Settings</a>
+                <a href="#">Настройки</a>
             </div>
         </nav>
         </div>
