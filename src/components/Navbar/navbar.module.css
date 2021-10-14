@@ -10,3 +10,6 @@
 .nav div:nth-child(1){
     padding-top: 20px;
 }
+.item a.active{
+    color: red;
+}
