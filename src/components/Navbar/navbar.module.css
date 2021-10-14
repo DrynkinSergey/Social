@@ -4,3 +4,9 @@
     background-color: blue;
     height: 100%;
 }
+.nav div{
+    margin-bottom: 20px;
+}
+.nav div:nth-child(1){
+    padding-top: 20px;
+}
