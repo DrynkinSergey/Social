@@ -15,6 +15,13 @@ const MyPosts = () => {
                     <Post message="hello" likesCount="1"/>
                     <Post message="hi" likesCount="231"/>
                     <Post message="Welcome" likesCount="3211"/>
+                    <Post message="Welcome" likesCount="3211"/>
+                    <Post message="Welcome" likesCount="3211"/>
+                    <Post message="Welcome" likesCount="3211"/>
+                    <Post message="Welcome" likesCount="3211"/>
+                    <Post message="Welcome" likesCount="3211"/>
+                    <Post message="Welcome" likesCount="3211"/>
+                    <Post message="Welcome" likesCount="3211"/>
                     <Post message="what's up" likesCount="3211"/>
                 </div>
             </div>

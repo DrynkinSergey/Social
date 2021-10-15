@@ -8,8 +8,9 @@ import Dialogs from "./components/Navbar/Dialogs/Dialogs";
 const App =() => {
   return (
       <BrowserRouter>
+          <Header/>
     <div className="app-wrapper">
-        <Header/>
+
         <Navbar/>
         <div className="app-wrapper-content">
             <Route path='/Profile' component={Profile}/>

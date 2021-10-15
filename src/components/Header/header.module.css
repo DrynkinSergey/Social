@@ -1,11 +1,12 @@
 .header{
     grid-area: header;
-    background-color: blue;
-    line-height: 60px;
+    background-color: #3b5998;
+    line-height: 55px;
+    height: 55px;
 }
 .img img{
     width: 100px;
-    height: 60px;
+    height: 55px;
 }
 .img{
     width: 50%;
@@ -19,11 +20,12 @@
   "img search auth";*/
     display: flex;
     justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
 
 }
 .auth{
     color: white;
-    padding-right: 20px;
 }
 .auth button{
     color: white;
