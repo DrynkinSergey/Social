@@ -1,10 +1,14 @@
 .header{
     grid-area: header;
     background-color: blue;
+    line-height: 60px;
 }
-.img{
+.img img{
     width: 100px;
     height: 60px;
+}
+.img{
+    width: 50%;
 }
 .wrapper{
     /*display: grid;
@@ -14,15 +18,29 @@
     grid-template-areas:
   "img search auth";*/
     display: flex;
+    justify-content: space-between;
 
 }
 .auth{
-    grid-area: auth;
+    color: white;
+    padding-right: 20px;
 }
-.search{
-    grid-area: search;
+.auth button{
+    color: white;
+    padding-right: 10px;
+    background-color: transparent;
+    border:none;
+    outline: none;
+}
+.auth button:hover{
+    cursor: pointer;
+    color: red;
+    transition: all ease-in .2s;
+}
+.search input{
+    border: none;
+    border-radius: 20px;
+    padding-left: 10px;
 
-
-
-
+    outline: none;
 }

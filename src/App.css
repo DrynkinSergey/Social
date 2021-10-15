@@ -1,5 +1,5 @@
 body {
-  background-color: white;
+  background-color: #3a444a;
 }
 a{
   color: white;
@@ -20,7 +20,7 @@ a{
 }
 .app-wrapper-content{
   grid-area: content;
-  background-color: white;
+
 
 }
 

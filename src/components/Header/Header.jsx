@@ -4,12 +4,14 @@ const Header = () =>{
     return(
         <header className={s.header }>
             <div className={s.wrapper}>
-                <img className={s.img} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfJltzNIbxo1JpysYmJBXidAL44qTkvXxzXw&usqp=CAU" alt=""/>
+                <div  className={s.img} >
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfJltzNIbxo1JpysYmJBXidAL44qTkvXxzXw&usqp=CAU" alt=""/>
+                </div>
             <div className={s.search}>
-                <input type="text" placeholder='Поиск'/>
+                <input type="text" placeholder='Поиск...'/>
             </div>
             <div className={s.auth}>
-                Войти | Зарегистрироваться
+                <button>Войти</button> | <button>Зарегистрироваться</button>
             </div>
 
             </div>
