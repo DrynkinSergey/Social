@@ -8,6 +8,13 @@
     width: 100px;
     height: 55px;
 }
+
+.logo{
+    color: #fff;
+    font-weight: 800;
+    font-size: 22px;
+    width: 60%;
+}
 .img{
     width: 50%;
 }

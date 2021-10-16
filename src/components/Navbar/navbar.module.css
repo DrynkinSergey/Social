@@ -4,7 +4,8 @@
     grid-area: nav;
     height: 100%;
 }
-.item{
+.item a{
+    color: #000;
 }
 .nav div{
     margin-bottom: 20px;

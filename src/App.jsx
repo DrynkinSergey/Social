@@ -5,12 +5,13 @@ import Profile from "./components/Navbar/Profile/Profile";
 import {BrowserRouter, Route} from "react-router-dom";
 import Dialogs from "./components/Navbar/Dialogs/Dialogs";
 
+
 const App =() => {
   return (
+
       <BrowserRouter>
           <Header/>
     <div className="app-wrapper">
-
         <Navbar/>
         <div className="app-wrapper-content">
             <Route path='/Profile' component={Profile}/>

@@ -4,8 +4,8 @@ const Header = () =>{
     return(
         <header className={s.header }>
             <div className={s.wrapper}>
-                <div  className={s.img} >
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfJltzNIbxo1JpysYmJBXidAL44qTkvXxzXw&usqp=CAU" alt=""/>
+                <div  className={s.logo} >
+                    My Social Network
                 </div>
             <div className={s.search}>
                 <input type="text" placeholder='Поиск...'/>

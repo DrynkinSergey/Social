@@ -13,10 +13,24 @@ const Profile = () =>{
                </div>
                 <div className={s.communicateUser}>
                     <div className={s.leftSide}>
-
+                        <button className={s.btnCommunication}>Нравится</button>
+                        <button className={s.btnCommunication}>Подписаться</button>
+                        <button className={s.btnCommunication}>Поделиться</button>
+                        <button className={s.btnCommunication}>...</button>
                     </div>
                     <div className={s.rightSide}>
-                        <button>Сообщение</button>
+                        <button className={s.btnSendMessage}>Сообщение</button>
+                    </div>
+                </div>
+                <div className={s.postsAndAboutWrapper}>
+                    <div className={s.posts}>
+                        <MyPosts/>
+                    </div>
+                    <div className={s.about}>
+                        <div className={s.aboutUser}>Web Developer</div>
+                        <div className={s.aboutUser}>The Official Drynkin Sergey Social Page</div>
+                        <div className={s.aboutUser}>
+                            webDeveloper@gmail.com</div>
                     </div>
                 </div>
 
@@ -24,7 +38,6 @@ const Profile = () =>{
 
 
 
-            <MyPosts/>
 
         </div>
         </div>
