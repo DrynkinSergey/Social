@@ -1,7 +1,55 @@
 .header{
     grid-area: header;
-    background-color: blue;
+    background-color: #3b5998;
+    line-height: 55px;
+    height: 55px;
 }
-.header img{
-    width: 150px;
+.img img{
+    width: 100px;
+    height: 55px;
+}
+
+.logo{
+    color: #fff;
+    font-weight: 800;
+    font-size: 22px;
+    width: 60%;
+}
+.img{
+    width: 50%;
+}
+.wrapper{
+    /*display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-gap: 10px;
+    grid-template-areas:
+  "img search auth";*/
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+.auth{
+    color: white;
+}
+.auth button{
+    color: white;
+    padding-right: 10px;
+    background-color: transparent;
+    border:none;
+    outline: none;
+}
+.auth button:hover{
+    cursor: pointer;
+    color: red;
+    transition: all ease-in .2s;
+}
+.search input{
+    border: none;
+    border-radius: 20px;
+    padding-left: 10px;
+
+    outline: none;
 }

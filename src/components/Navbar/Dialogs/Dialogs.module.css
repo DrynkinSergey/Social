@@ -1,0 +1,65 @@
+.dialogsWrapper{
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 10px;
+    grid-template-areas:
+  "friendsList dialog";
+}
+.dialog{
+    grid-area: dialog;
+    justify-content: space-between;
+}
+
+.title{
+    padding-bottom: 20px;
+}
+.friendsList{
+    grid-area: friendsList;
+}
+ul li{
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.message{
+
+}
+.item{
+
+}
+
+/*.incomeBlock{*/
+/*    display: flex;*/
+/*    justify-content: left;*/
+/*    width: 45%;*/
+/*}*/
+/*.sentBlock{*/
+/*    display: flex;*/
+/*    justify-content: right  ;*/
+/*    width: 45%;*/
+/*    float: right;*/
+
+/*}*/
+.income{
+    float: left;
+    width: 50%;
+    background-color: #ffc4da;
+
+}
+.sent{
+    float: right;
+    width: 50%;
+    background-color: #fffed4;
+
+}
+.custom{
+    border-radius: 20px;
+    border: 1px solid blue;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.active{
+    font-weight: 800;
+    text-decoration: underline;
+    color: red;
+}

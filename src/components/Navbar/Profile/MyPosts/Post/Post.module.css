@@ -1,17 +1,55 @@
 .avatar{
     width: 50px;
     height: 50px;
-    border-radius: 20px;
     object-fit: cover;
+    position: absolute;
+    top:10px;
+    left:10px;
 }
 .post{
     margin-bottom: 10px;
-    border-radius: 20px;
+    border: 1px solid #e8eaec;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
 
-}
-.post:nth-child(odd){
-    background-color: cornflowerblue;
 }
 .count{
+    color: #264b91;
+}
+.userName{
+    color: #4267b2;
+    font-weight: 800;
+    font-size: 18px;
+}
+.postImage{
+    width: 530px;
+    height: 300px;
+    object-fit: cover;
+    display: inline;
 
+}
+.postBtn{
+    background-color: #f6f7f9;
+    border: 1px solid #e8eaec;
+    padding: 5px 10px;
+}
+.postBtn:hover{
+    cursor: pointer;
+    background-color: #4267b2;
+    transition: all ease-in .2s;
+    color: #fff;
+}
+.userName, .timeOfPost{
+    padding-left: 50px;
+}
+.timeOfPost{
+    margin-bottom: 20px;
+    color: #b1bdce;
+    font-size: 14px;
+}
+.postText{
+    margin-bottom: 20px;
+    color: #636569;
 }

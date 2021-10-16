@@ -1,17 +1,17 @@
 body {
-  background-color: white;
+  background-color: #e9ebee;
+  padding: 0;
+  margin: 0;
 }
 a{
-  color: white;
   text-decoration: none;
   padding-left: 20px;
   font-size: 16px;
 }
 .app-wrapper{
   display: grid;
-  grid-template-rows: 60px 1fr;
+  grid-template-rows: 0 1fr;
   grid-template-columns: 2fr 10fr;
-  grid-gap: 10px;
   grid-template-areas:
   "header header"
   "nav content";
@@ -20,7 +20,7 @@ a{
 }
 .app-wrapper-content{
   grid-area: content;
-  background-color: white;
+
 
 }
 
