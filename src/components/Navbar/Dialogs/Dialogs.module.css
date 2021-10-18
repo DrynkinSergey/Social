@@ -5,6 +5,7 @@
     grid-gap: 10px;
     grid-template-areas:
   "friendsList dialog";
+    padding:0 20px;
 }
 .dialog{
     grid-area: dialog;
@@ -17,16 +18,18 @@
 .friendsList{
     grid-area: friendsList;
 }
-ul li{
+ li{
     margin-bottom: 20px;
     font-size: 20px;
 }
 .message{
 
 }
-.item{
-
+.item a {
+    color: #000;
 }
+
+
 
 /*.incomeBlock{*/
 /*    display: flex;*/
