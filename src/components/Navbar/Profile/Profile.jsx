@@ -7,7 +7,8 @@ const Profile = (props) => {
     let addPost = React.createRef();
     let onBtnClick = () => {
         let text = addPost.current.value;
-        alert(text);
+        props.addPost(text);
+        debugger;
     }
     let friends = props.state.friends.map(friend => <Friends src={friend.src} name={friend.name}/>)
     return (

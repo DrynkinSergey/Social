@@ -53,4 +53,14 @@ let state = {
 
 }
 
+export let addPost = (postText) => {
+    let newPost = {
+        postText:postText,
+        likesCount:'11,292',
+        postTime:2,
+        src:"https://bilberrys.ru/wp-content/uploads/2019/10/00212.png"
+    }
+    state.profilePage.posts.push(newPost);
+}
+
 export default state;

@@ -82,3 +82,6 @@ hr{
     border: 1px solid #e8eaec;
     border-radius: 5px;
 }
+textarea{
+    width: 58%;
+}

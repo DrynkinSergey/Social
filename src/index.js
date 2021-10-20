@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import state from "./Redux/state";
+import {addPost} from "./Redux/state";
 /*
 
 let postData = [
@@ -47,7 +48,7 @@ let messagesData = [
 
 
 ReactDOM.render(
-    <App state={state} />,
+    <App state={state} addPost={addPost}/>,
   document.getElementById('root')
 );
 
