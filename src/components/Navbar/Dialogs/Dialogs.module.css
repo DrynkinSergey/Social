@@ -29,20 +29,6 @@
     color: #000;
 }
 
-
-
-/*.incomeBlock{*/
-/*    display: flex;*/
-/*    justify-content: left;*/
-/*    width: 45%;*/
-/*}*/
-/*.sentBlock{*/
-/*    display: flex;*/
-/*    justify-content: right  ;*/
-/*    width: 45%;*/
-/*    float: right;*/
-
-/*}*/
 .income{
     float: left;
     width: 50%;

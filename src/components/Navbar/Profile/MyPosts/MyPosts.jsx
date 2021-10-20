@@ -3,7 +3,6 @@ import s from "./myPosts.module.css";
 import Post from "./Post/Post";
 
 const MyPosts = (props) => {
-    debugger;
     /*let postData = [
         {postText:"Создание страницы профиля почти готово",
             likesCount:'112,292',
@@ -27,7 +26,7 @@ const MyPosts = (props) => {
             src:"https://senior.ua/storage/article/content/4c87f7c1-6bb1-4831-98e7-f926b547ee48.jpeg" }
     ]*/
 
-    let posts = props.postData.map(post => <Post postText={post.postText}
+    let posts = props.posts.map(post => <Post postText={post.postText}
                                                  likesCount={post.likesCount} postTime={post.postTime} src={post.src}/>);
     return (
         <div>

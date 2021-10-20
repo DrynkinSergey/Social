@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import state from "./Redux/state";
+/*
 
 let postData = [
     {postText:"Создание страницы профиля почти готово",
@@ -25,8 +27,27 @@ let postData = [
         src:"https://senior.ua/storage/article/content/4c87f7c1-6bb1-4831-98e7-f926b547ee48.jpeg" }
 ]
 
+/!*Создаем массив диалогов*!/
+let dialogsData = [
+    {id: 1, name: 'Сергей'},
+    {id: 2, name: 'Настя'},
+    {id: 3, name: 'Алиса'},
+    {id: 4, name: 'Алена'},
+    {id: 5, name: 'Толик'}
+]
+/!*Создаем массив сообщений*!/
+let messagesData = [
+    {id: 1, message: '1'},
+    {id: 2, message: '2'},
+    {id: 3, message: '3'},
+    {id: 4, message: '4'},
+    {id: 5, message: '5'},
+]
+*/
+
+
 ReactDOM.render(
-    <App postData={postData}/>,
+    <App state={state} />,
   document.getElementById('root')
 );
 

@@ -7,9 +7,6 @@ import Dialogs from "./components/Navbar/Dialogs/Dialogs";
 
 
 const App = (props) => {
-    debugger;
-    /*const WrappedHome = function(props) {
-        return (<Profile {...props}/>);}*/
     return (
 
         <BrowserRouter>
@@ -17,9 +14,8 @@ const App = (props) => {
             <div className="app-wrapper">
                 <Navbar/>
                 <div className="app-wrapper-content">
-                    <Route path='/Profile'  component={()=><Profile postData={props.postData}/>}/>
-
-                    <Route path='/Dialogs' component={Dialogs}/>
+                    <Route path='/Profile'  render={()=><Profile state={props.state.profilePage}/>}/>
+                    <Route path='/Dialogs' render={()=><Dialogs state={props.state.dialogsPage}/>}/>
                 </div>
             </div>
         </BrowserRouter>

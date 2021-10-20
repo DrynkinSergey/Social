@@ -3,7 +3,7 @@ import s from './profile.module.css';
 import MyPosts from "./MyPosts/MyPosts";
 
 const Profile = (props) => {
-    debugger;
+    console.log(props.state)
     return (
         <div>
             <div className={s.profileWrapper}>
@@ -25,7 +25,7 @@ const Profile = (props) => {
                 </div>
                 <div className={s.postsAndAboutWrapper}>
                     <div className={s.posts}>
-                        <MyPosts postData={props.postData}/>
+                        <MyPosts posts={props.state.posts}/>
                     </div>
                     <div className={s.about}>
                         <div className={s.aboutUser}>Web Developer</div>
@@ -35,7 +35,6 @@ const Profile = (props) => {
                         </div>
                     </div>
                 </div>
-
 
             </div>
         </div>
