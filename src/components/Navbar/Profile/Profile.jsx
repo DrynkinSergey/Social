@@ -4,9 +4,12 @@ import MyPosts from "./MyPosts/MyPosts";
 import Friends from "./Friends/Friends";
 
 const Profile = (props) => {
-
+    let addPost = React.createRef();
+    let onBtnClick = () => {
+        let text = addPost.current.value;
+        alert(text);
+    }
     let friends = props.state.friends.map(friend => <Friends src={friend.src} name={friend.name}/>)
-
     return (
         <div>
             <div className={s.profileWrapper}>
@@ -20,13 +23,15 @@ const Profile = (props) => {
                         <button className={s.btnCommunication}>Нравится</button>
                         <button className={s.btnCommunication}>Подписаться</button>
                         <button className={s.btnCommunication}>Поделиться</button>
-                        <button className={s.btnCommunication}>Создать пост</button>
+                        <button onClick={ onBtnClick } className={s.btnCommunication}>Создать пост</button>
                         <button className={s.btnCommunication}>...</button>
                     </div>
                     <div className={s.rightSide}>
                         <button className={s.btnSendMessage}>Сообщение</button>
                     </div>
                 </div>
+                <textarea ref={addPost} className={s.createPost}></textarea>
+
                 <div className={s.postsAndAboutWrapper}>
                     <div className={s.posts}>
                         <MyPosts posts={props.state.posts}/>

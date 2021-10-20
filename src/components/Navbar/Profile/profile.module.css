@@ -75,3 +75,10 @@ h2{
 hr{
     margin-bottom: 10px;
 }
+.createPost{
+    padding: 20px 0;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border: 1px solid #e8eaec;
+    border-radius: 5px;
+}
