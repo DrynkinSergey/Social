@@ -1,9 +1,12 @@
 import React from "react";
 import s from './profile.module.css';
 import MyPosts from "./MyPosts/MyPosts";
+import Friends from "./Friends/Friends";
 
 const Profile = (props) => {
-    console.log(props.state)
+
+    let friends = props.state.friends.map(friend => <Friends src={friend.src} name={friend.name}/>)
+
     return (
         <div>
             <div className={s.profileWrapper}>
@@ -17,6 +20,7 @@ const Profile = (props) => {
                         <button className={s.btnCommunication}>Нравится</button>
                         <button className={s.btnCommunication}>Подписаться</button>
                         <button className={s.btnCommunication}>Поделиться</button>
+                        <button className={s.btnCommunication}>Создать пост</button>
                         <button className={s.btnCommunication}>...</button>
                     </div>
                     <div className={s.rightSide}>
@@ -32,6 +36,14 @@ const Profile = (props) => {
                         <div className={s.aboutUser}>The Official Drynkin Sergey Social Page</div>
                         <div className={s.aboutUser}>
                             webDeveloper@gmail.com
+                        </div>
+                        <div className={`${s.aboutUser}`}>
+                            <h2>Друзья</h2>
+                            <hr/>
+                            <div className={s.friends}>
+                                {friends}
+                                </div>
+
                         </div>
                     </div>
                 </div>

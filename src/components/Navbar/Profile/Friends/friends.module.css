@@ -1,0 +1,22 @@
+.friends{
+    display: flex;
+    justify-content: space-between;
+}
+.friendsItem{
+    width: 25%;
+}
+.img{
+    max-width: 70px;
+    max-height: 70px;
+    border-radius: 50%;
+}
+.name{
+    text-align: center;
+}
+.friendsItem:hover{
+    cursor: pointer;
+    overflow: hidden;
+    transform: scale(1.1);
+    transition: all linear .2s;
+    font-weight: 700;
+}

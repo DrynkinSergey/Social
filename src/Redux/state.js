@@ -17,7 +17,13 @@ let state = {
                 likesCount:'1,292',
                 postTime:15,
                 src:"https://senior.ua/storage/article/content/4c87f7c1-6bb1-4831-98e7-f926b547ee48.jpeg" }
+        ],
+        friends:[
+            {name:'Алёна', id:1, src:"http://www.team.gsamdani.com/wp-content/uploads/2016/05/tm9.jpg"},
+            {name:'Настя', id:2, src:"https://sriit.ac.in/tool/plugins/images/users/4.jpg"},
+            {name:'Толик', id:3, src:"https://karchitects.com.ua/wp-content/uploads/2018/04/user-img-1.png"}
         ]
+
     },
     dialogsPage:{
         dialogs:[
@@ -34,7 +40,17 @@ let state = {
             {id: 4, message: '4'},
             {id: 5, message: '5'},
         ]
-    }
+    },
+
+
+    sidebar:[
+        {id:1, title:"Профиль"},
+        {id:1, title:"Профиль"},
+        {id:1, title:"Профиль"},
+        {id:1, title:"Сообщения"},
+    ]
+
+
 }
 
 export default state;

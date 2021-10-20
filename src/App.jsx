@@ -7,12 +7,16 @@ import Dialogs from "./components/Navbar/Dialogs/Dialogs";
 
 
 const App = (props) => {
+    let sidebar = props.state.sidebar.map(link => <Navbar title={link.title}/>);
+    console.log(sidebar)
     return (
 
         <BrowserRouter>
             <Header/>
             <div className="app-wrapper">
-                <Navbar/>
+                <Navbar state={props.state.sidebar}/>
+                {/*{sidebar}*/}
+
                 <div className="app-wrapper-content">
                     <Route path='/Profile'  render={()=><Profile state={props.state.profilePage}/>}/>
                     <Route path='/Dialogs' render={()=><Dialogs state={props.state.dialogsPage}/>}/>
