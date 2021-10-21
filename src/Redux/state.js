@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from "../render";
+
 let state = {
     profilePage:{
         posts: [
@@ -60,7 +62,8 @@ export let addPost = (postText) => {
         postTime:2,
         src:"https://bilberrys.ru/wp-content/uploads/2019/10/00212.png"
     }
-    state.profilePage.posts.push(newPost);
+    state.profilePage.posts.unshift(newPost);
+    rerenderEntireTree(state);
 }
 
 export default state;
