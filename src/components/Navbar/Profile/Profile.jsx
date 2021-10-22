@@ -8,9 +8,14 @@ const Profile = (props) => {
     let onBtnClick = () => {
         let text = addPost.current.value;
         props.addPost(text);
-        debugger;
+        addPost.current.value='';
     }
+    let onPostChange = () =>
+    {
+
+    };
     let friends = props.state.friends.map(friend => <Friends src={friend.src} name={friend.name}/>)
+    debugger;
     return (
         <div>
             <div className={s.profileWrapper}>
@@ -31,7 +36,7 @@ const Profile = (props) => {
                         <button className={s.btnSendMessage}>Сообщение</button>
                     </div>
                 </div>
-                <textarea ref={addPost} className={s.createPost}></textarea>
+                <textarea ref={addPost} onChange={onPostChange} className={s.createPost} value={props.state.newPostText}/>
 
                 <div className={s.postsAndAboutWrapper}>
                     <div className={s.posts}>

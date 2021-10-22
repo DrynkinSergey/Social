@@ -20,6 +20,7 @@ let state = {
                 postTime:15,
                 src:"https://senior.ua/storage/article/content/4c87f7c1-6bb1-4831-98e7-f926b547ee48.jpeg" }
         ],
+        newPostText:'React',
         friends:[
             {name:'Алёна', id:1, src:"http://www.team.gsamdani.com/wp-content/uploads/2016/05/tm9.jpg"},
             {name:'Настя', id:2, src:"https://sriit.ac.in/tool/plugins/images/users/4.jpg"},
@@ -54,7 +55,14 @@ let state = {
 
 
 }
-
+//вместо setTimeout
+function sleep(millis) {
+    let t = (new Date()).getTime();
+    let i = 0;
+    while (((new Date()).getTime() - t) < millis) {
+        i++;
+    }
+}
 export let addPost = (postText) => {
     let newPost = {
         postText:postText,
@@ -63,7 +71,9 @@ export let addPost = (postText) => {
         src:"https://bilberrys.ru/wp-content/uploads/2019/10/00212.png"
     }
     state.profilePage.posts.unshift(newPost);
+    sleep(300);
     rerenderEntireTree(state);
+
 }
 
 export default state;
