@@ -6,16 +6,17 @@ import Friends from "./Friends/Friends";
 const Profile = (props) => {
     let addPost = React.createRef();
     let onBtnClick = () => {
-        let text = addPost.current.value;
+        let text = props.state.newPostText;
         props.addPost(text);
         addPost.current.value='';
+
     }
     let onPostChange = () =>
     {
-
+        let text = addPost.current.value;
+        props.updateNewPostText(text);
     };
     let friends = props.state.friends.map(friend => <Friends src={friend.src} name={friend.name}/>)
-    debugger;
     return (
         <div>
             <div className={s.profileWrapper}>

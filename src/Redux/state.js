@@ -63,9 +63,9 @@ function sleep(millis) {
         i++;
     }
 }
-export let addPost = (postText) => {
+export let addPost = () => {
     let newPost = {
-        postText:postText,
+        postText: state.profilePage.newPostText,
         likesCount:'11,292',
         postTime:2,
         src:"https://bilberrys.ru/wp-content/uploads/2019/10/00212.png"
@@ -73,7 +73,14 @@ export let addPost = (postText) => {
     state.profilePage.posts.unshift(newPost);
     sleep(300);
     rerenderEntireTree(state);
+    state.profilePage.newPostText='';
 
 }
+export let updateNewPostText = (newText) => {
+        state.profilePage.newPostText = newText;
+        rerenderEntireTree(state);
+    }
+
+
 
 export default state;

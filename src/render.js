@@ -1,12 +1,12 @@
 import ReactDOM from "react-dom";
 import App from "./App";
 import React from 'react';
-import {addPost} from "./Redux/state";
+import {addPost, updateNewPostText} from "./Redux/state";
 
 
 export let rerenderEntireTree = (state) => {
     ReactDOM.render(
-        <App state={state} addPost={addPost}/>,
+        <App state={state} updateNewPostText={updateNewPostText} addPost={addPost}/>,
         document.getElementById('root')
     );
 }
