@@ -2,20 +2,24 @@ import React from "react";
 import s from './profile.module.css';
 import MyPosts from "./MyPosts/MyPosts";
 import Friends from "./Friends/Friends";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../Redux/state";
+
+
+
 
 const Profile = (props) => {
     let addPost = React.createRef();
     let onBtnClick = () => {
         let text = props.state.newPostText;
-        props.dispatch( {type:'ADD-POST'} );
+        props.dispatch(addPostActionCreator());
         addPost.current.value='';
 
     }
     let onPostChange = () =>
     {
         let text = addPost.current.value;
-        props.dispatch({type:'UPDATE-NEW-POST-TEXT',
-            newText:text});
+        let action = updateNewPostTextActionCreator(text);
+        props.dispatch(action);
     };
     let friends = props.state.friends.map(friend => <Friends src={friend.src} name={friend.name}/>)
     return (

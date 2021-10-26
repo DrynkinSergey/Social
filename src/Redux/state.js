@@ -1,3 +1,5 @@
+const ADD_POST = 'ADD-POST';
+const UPPDATE_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
 let store = {
     _callSubscriber ()  {
@@ -92,12 +94,31 @@ let store = {
     }
 },
     dispatch(action){
-        if (action.type === 'ADD-POST') {
+        if (action.type === ADD_POST) {
            this._addPost();
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-            this._updateNewPostText(action.newText);
+        }
+        else {
+            if (action.type === UPPDATE_POST_TEXT) {
+                        this._updateNewPostText(action.newText);
+                    }
         }
     }
+}
+export const addPostActionCreator = () => {
+    return (
+        {
+            type:ADD_POST
+
+        }
+    )
+}
+export const updateNewPostTextActionCreator = (text) => {
+    return (
+        {
+            type:UPPDATE_POST_TEXT,
+            newText: text
+        }
+    )
 }
 
 export default store;
