@@ -7,14 +7,15 @@ const Profile = (props) => {
     let addPost = React.createRef();
     let onBtnClick = () => {
         let text = props.state.newPostText;
-        props.addPost(text);
+        props.dispatch( {type:'ADD-POST'} );
         addPost.current.value='';
 
     }
     let onPostChange = () =>
     {
         let text = addPost.current.value;
-        props.updateNewPostText(text);
+        props.dispatch({type:'UPDATE-NEW-POST-TEXT',
+            newText:text});
     };
     let friends = props.state.friends.map(friend => <Friends src={friend.src} name={friend.name}/>)
     return (
