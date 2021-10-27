@@ -10,21 +10,21 @@ const App = (props) => {
     let sidebar = props.state.sidebar.map(link => <Navbar title={link.title}/>);
 
     return (
-
-        <BrowserRouter>
+        <div>
             <Header/>
             <div className="app-wrapper">
                 <Navbar state={props.state.sidebar}/>
-                {/*{sidebar}*/}
 
                 <div className="app-wrapper-content">
-                    <Route path='/Profile'  render={()=><Profile dispatch={props.dispatch}
-                                                                 state={props.state.profilePage}/>}/>
+                    <Route path='/Profile'
+                           render={() => <Profile dispatch={props.dispatch}
+                                                  state={props.state.profilePage}/>}/>
 
-                    <Route path='/Dialogs' render={()=><Dialogs state={props.state.dialogsPage}/>}/>
+                    <Route path='/Dialogs'
+                           render={() => <Dialogs store={props.store} />}/>
                 </div>
             </div>
-        </BrowserRouter>
+        </div>
     );
 }
 
