@@ -2,11 +2,6 @@ import dialogsReducer from "./dialogs-reducer";
 import profileReducer from "./profile-reducer";
 import sidebarReducer from "./sidebar-reducer";
 
-const ADD_POST = 'ADD-POST';
-const UPPDATE_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-
-const UPDATE_NEW_MESSAGE_TEXT='UPDATE-NEW-MESSAGE-TEXT'
-const SEND_MESSAGE='SEND-MESSAGE'
 
 let store = {
     _callSubscriber ()  {
@@ -94,53 +89,13 @@ let store = {
     },
 
 
-    sleep(millis) {
-    let t = (new Date()).getTime();
-    let i = 0;
-    while (((new Date()).getTime() - t) < millis) {
-        i++;
-    }
-},
+
     dispatch(action){
         this._state.profilePage = profileReducer(this._state.profilePage,action);
         this._state.dialogsPage = dialogsReducer(this._state.dialogsPage,action);
         this._state.sidebar = sidebarReducer(this._state.sidebar,action);
         this._callSubscriber(this._state);
-
     }
-}
-export const addPostActionCreator = () => {
-    return (
-        {
-            type:ADD_POST
-
-        }
-    )
-}
-export const updateNewPostTextActionCreator = (text) => {
-    return (
-        {
-            type:UPPDATE_POST_TEXT,
-            newText: text
-        }
-    )
-}
-
-export const sendMessageCreator = () => {
-    return (
-        {
-            type:SEND_MESSAGE
-
-        }
-    )
-}
-export const updateNewMessageBodyCreator = (text) => {
-    return (
-        {
-            type:UPDATE_NEW_MESSAGE_TEXT,
-            text: text
-        }
-    )
 }
 
 export default store;

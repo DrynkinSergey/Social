@@ -2,7 +2,7 @@ import React from "react";
 import s from './profile.module.css';
 import MyPosts from "./MyPosts/MyPosts";
 import Friends from "./Friends/Friends";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../Redux/state";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../Redux/profile-reducer";
 
 
 
