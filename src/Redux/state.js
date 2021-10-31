@@ -1,5 +1,10 @@
+import dialogsReducer from "./dialogs-reducer";
+import profileReducer from "./profile-reducer";
+import sidebarReducer from "./sidebar-reducer";
+
 const ADD_POST = 'ADD-POST';
 const UPPDATE_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
 const UPDATE_NEW_MESSAGE_TEXT='UPDATE-NEW-MESSAGE-TEXT'
 const SEND_MESSAGE='SEND-MESSAGE'
 
@@ -97,24 +102,10 @@ let store = {
     }
 },
     dispatch(action){
-        if (action.type === ADD_POST) {
-           this._addPost();
-        }
-        else if (action.type === UPPDATE_POST_TEXT) {
-                        this._updateNewPostText(action.newText);
-                    }
-        else if(action.type === UPDATE_NEW_MESSAGE_TEXT) {
-            this._state.dialogsPage.newMessageText = action.text;
-            this._callSubscriber(this._state);
-        }
-        else if(action.type === SEND_MESSAGE) {
-            let body = this._state.dialogsPage.newMessageText;
-             this._state.dialogsPage.newMessageText = '';
-            let addMessage = {id: 1, message: body};
-            this._state.dialogsPage.messages.push(addMessage);
-            this._callSubscriber(this._state);
-        }
-
+        this._state.profilePage = profileReducer(this._state.profilePage,action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage,action);
+        this._state.sidebar = sidebarReducer(this._state.sidebar,action);
+        this._callSubscriber(this._state);
 
     }
 }
