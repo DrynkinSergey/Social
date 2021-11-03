@@ -4,16 +4,11 @@ import MyPosts from "./MyPosts/MyPosts";
 import Friends from "./Friends/Friends";
 import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../Redux/profile-reducer";
 
-
-
-
 const Profile = (props) => {
     let addPost = React.createRef();
     let onBtnClick = () => {
-        let text = props.state.newPostText;
         props.dispatch(addPostActionCreator());
         addPost.current.value='';
-
     }
     let onPostChange = () =>
     {
@@ -59,15 +54,12 @@ const Profile = (props) => {
                             <hr/>
                             <div className={s.friends}>
                                 {friends}
-                                </div>
-
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-
     );
 }
 export default Profile;

@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 import App from "./App";
 import React from 'react';
-import store from "./Redux/state";
+import store from "./Redux/redux-store";
 import {BrowserRouter} from "react-router-dom";
 
 export let rerenderEntireTree = (state) => {
@@ -17,4 +17,8 @@ export let rerenderEntireTree = (state) => {
 * Рендерим весь ДОМ, отдаем в Store функцию рендера через сабскрайб
 * */
 rerenderEntireTree(store.getState());
-store.subscribe(rerenderEntireTree);
+store.subscribe(() => {
+    /*Прокидываем стейт через гет стор и отдаем его в функцию рендера*/
+    let state = store.getState();
+    rerenderEntireTree(state);
+});

@@ -7,7 +7,6 @@ import Dialogs from "./components/Navbar/Dialogs/Dialogs";
 
 
 const App = (props) => {
-    let sidebar = props.state.sidebar.map(link => <Navbar title={link.title}/>);
 
     return (
         <div>
