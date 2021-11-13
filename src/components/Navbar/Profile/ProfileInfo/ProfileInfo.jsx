@@ -1,19 +1,16 @@
 import React from "react";
 import s from "../profile.module.css";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../../Redux/profile-reducer";
 
 const ProfileInfo = (props) => {
-    let addPost = React.createRef();
-
-    let onBtnClick = () => {
-        props.dispatch(addPostActionCreator());
-        addPost.current.value='';
+    let newElementPost = React.createRef();
+    let addPost = () => {
+        props.addPost();
     }
     let onPostChange = () =>
     {
-        let text = addPost.current.value;
-        let action = updateNewPostTextActionCreator(text);
-        props.dispatch(action);
+        let text = newElementPost.current.value;
+        props.updateNewPostText(text);
+
     };
     return(
         <div>
@@ -29,15 +26,15 @@ const ProfileInfo = (props) => {
                         <button className={s.btnCommunication}>Нравится</button>
                         <button className={s.btnCommunication}>Подписаться</button>
                         <button className={s.btnCommunication}>Поделиться</button>
-                        <button onClick={ onBtnClick } className={s.btnCommunication}>Создать пост</button>
+                        <button onClick={ addPost } className={s.btnCommunication}>Создать пост</button>
                         <button className={s.btnCommunication}>...</button>
                     </div>
                     <div className={s.rightSide}>
                         <button className={s.btnSendMessage}>Сообщение</button>
                     </div>
                 </div>
-                <textarea ref={addPost} onChange={onPostChange} className={s.createPost} value={props.newPostText}/>
-
+                <form action=""><textarea id='ta' ref={newElementPost} onChange={onPostChange} className={s.createPost} value={props.newPostText}/>
+                </form>
             </div>
             </div>
     )

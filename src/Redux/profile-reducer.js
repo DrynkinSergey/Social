@@ -1,5 +1,5 @@
 const ADD_POST = 'ADD-POST';
-const UPPDATE_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const UPDATE_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
 let initialState = {
 
@@ -49,7 +49,7 @@ const profileReducer = (state = initialState, action) => {
             state.posts.unshift(newPost);
             state.newPostText = '';
             return state;
-        case UPPDATE_POST_TEXT:
+        case UPDATE_POST_TEXT:
         {
             state.newPostText = action.newText;
             return state;
@@ -72,7 +72,7 @@ export const addPostActionCreator = () => {
 export const updateNewPostTextActionCreator = (text) => {
     return (
         {
-            type:UPPDATE_POST_TEXT,
+            type:UPDATE_POST_TEXT,
             newText: text
         }
     )

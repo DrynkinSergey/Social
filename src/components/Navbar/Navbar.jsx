@@ -3,12 +3,6 @@ import s from './navbar.module.css';
 import {NavLink} from "react-router-dom";
 
 const Navbar = (props) => {
-    /*debugger
-    let sidebar = props.state.map((link) => {
-        <div className={s.item}>
-            <NavLink to='/Profile' title={link.title}> {link.title}</NavLink>
-        </div>
-    };*/
 
     return (
         <div>

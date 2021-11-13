@@ -2,24 +2,23 @@ import React from "react";
 import s from './Dialogs.module.css';
 import {MessageIncome, MessageSent} from "./Messages/Messages"
 import DialogItem from "./DialogItem/DialogItem";
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../../Redux/dialogs-reducer";
-
 const Dialogs = (props) => {
-    let state = props.store.getState().dialogsPage;
+    debugger
     /*Создаем массив сообщений путем маппинга, мапим каждый элемент из старого массива в новый, проходим по каждому
     * Message и берем его значение, возвращаем массив MessageElements для дальнейшего использования*/
-    let messagesElements = state.messages.map(message => <MessageSent message={message.message}/>);
+    let messagesElements = props.dialogsPage.messages.map(message => <MessageSent message={message.message}/>);
 
-    let dialogsElements = state.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
+    let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
 
-    let newMessageBody = state.newMessageText;
+    let newMessageBody = props.newMessageText;
     let onMessageChange = (e) => {
         let body = e.target.value;
-        debugger
-        props.store.dispatch(updateNewMessageBodyCreator(body));
+        props.onMessageChange(body);
     }
     let onSendMessageClick = () => {
-    props.store.dispatch(sendMessageCreator());
+        props.onSendMessage();
+        props.dialogsPage.newMessageText=''
+        console.log(props.dialogsPage.newMessageText)
     }
 
     return (
@@ -34,7 +33,7 @@ const Dialogs = (props) => {
             <div className={s.dialog}>
                 <h2>Сообщения</h2>
                 <div className={s.sendMessage}>
-                    <div><textarea onChange={onMessageChange} value={newMessageBody} ></textarea></div>
+                    <div><textarea onChange={onMessageChange} value={props.dialogsPage.newMessageText} > </textarea></div>
                    <div> <button onClick={ onSendMessageClick} >Отправить</button></div>
                 </div>
                 {messagesElements}

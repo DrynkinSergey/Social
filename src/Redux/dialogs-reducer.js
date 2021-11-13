@@ -10,10 +10,10 @@ let initialState = {
         {id: 5, name: 'Толик'}
     ],
     messages: [
-        {id: 1, message: '1'},
-        {id: 2, message: '2'},
-        {id: 3, message: '3'},
-        {id: 4, message: '4'},
+        {id: 1, message: '1213'},
+        {id: 2, message: '2312321'},
+        {id: 3, message: '3123123'},
+        {id: 4, message: '43123123'},
         {id: 5, message: '5'},
     ],
     newMessageText: '',
