@@ -5,17 +5,13 @@ import Friends from "./Friends/Friends";
 import ProfileInfoContainer from "./ProfileInfo/ProfileInfoContainer";
 
 const Profile = (props) => {
-    let state = props.store.getState();
-    let friends = state.profilePage.friends.map(friend => <Friends src={friend.src} name={friend.name}/>)
-
     return (
         <div>
             <div className={s.profileWrapper}>
-                <ProfileInfoContainer  store={props.store}/>
-
+                <ProfileInfoContainer  />
                 <div className={s.postsAndAboutWrapper}>
                     <div className={s.posts}>
-                        <MyPosts posts={state.profilePage.posts}/>
+                        <MyPosts />
                     </div>
                     <div className={s.about}>
                         <div className={s.aboutUser}>Web Developer</div>
@@ -27,7 +23,7 @@ const Profile = (props) => {
                             <h2>Друзья</h2>
                             <hr/>
                             <div className={s.friends}>
-                                {friends}
+                                <Friends/>
                             </div>
                         </div>
                     </div>

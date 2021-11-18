@@ -1,12 +1,20 @@
 import React from "react";
 import s from './friends.module.css';
+import storeContext from "../../../../storeContext";
+import FriendsItem from "./FriendsItem";
 
-const Friends = (props) => {
-    return(
-            <div  className={s.friendsItem}>
-                <img className={s.img} src={props.src} alt=""/>
-                <div className={s.name}>{props.name}</div></div>
-    );
-};
+const Friends = () => {
+    return <storeContext.Consumer>
+        {
+            (store) => {
+                let state = store.getState();
+                let friends = state.profilePage.friends.map(friend => <FriendsItem src={friend.src}
+                                                                                   name={friend.name}/>)
+                return friends
 
+
+        }
+        }
+    </storeContext.Consumer>
+}
 export default Friends;

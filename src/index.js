@@ -3,12 +3,15 @@ import App from "./App";
 import React from 'react';
 import store from "./Redux/redux-store";
 import {BrowserRouter} from "react-router-dom";
+import storeContext from "./storeContext";
 
 export let rerenderEntireTree = (state) => {
     ReactDOM.render(
         //.bind(store) добавляется для того, чтоб не терять обьект и контекст вызова. иначе метод вызовет props
        <BrowserRouter>
-           <App state={state} store={store} dispatch={store.dispatch.bind(store)}/>
+           <storeContext.Provider value={store}>
+           <App />
+           </storeContext.Provider>
        </BrowserRouter>,
         document.getElementById('root')
     );

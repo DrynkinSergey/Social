@@ -3,7 +3,6 @@ import s from './Dialogs.module.css';
 import {MessageIncome, MessageSent} from "./Messages/Messages"
 import DialogItem from "./DialogItem/DialogItem";
 const Dialogs = (props) => {
-    debugger
     /*Создаем массив сообщений путем маппинга, мапим каждый элемент из старого массива в новый, проходим по каждому
     * Message и берем его значение, возвращаем массив MessageElements для дальнейшего использования*/
     let messagesElements = props.dialogsPage.messages.map(message => <MessageSent message={message.message}/>);

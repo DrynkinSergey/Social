@@ -1,16 +1,22 @@
 import React from "react";
 import s from "./myPosts.module.css";
 import Post from "./Post/Post";
+import storeContext from "../../../../storeContext";
+const MyPosts = () => {
+    return <storeContext.Consumer>
+        {
+            (store) => {
+                let state = store.getState().profilePage;
+                let posts = state.posts.map(post => <Post postText={post.postText}
+                                                          likesCount={post.likesCount} postTime={post.postTime} src={post.src}/>);
 
-const MyPosts = (props) => {
+                return posts
+            }
+        }
 
-    let posts = props.posts.map(post => <Post postText={post.postText}
-                                              likesCount={post.likesCount} postTime={post.postTime} src={post.src}/>);
-    return (
-        <div>
-            {posts}
-        </div>
-    );
+
+
+    </storeContext.Consumer>
 }
 
 export default MyPosts;
