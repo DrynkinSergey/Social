@@ -1,8 +1,8 @@
 import React from "react";
 import s from './profile.module.css';
-import MyPosts from "./MyPosts/MyPosts";
-import Friends from "./Friends/Friends";
 import ProfileInfoContainer from "./ProfileInfo/ProfileInfoContainer";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
+import FriendsContainer from "./Friends/FriendsContainer";
 
 const Profile = (props) => {
     return (
@@ -11,7 +11,7 @@ const Profile = (props) => {
                 <ProfileInfoContainer  />
                 <div className={s.postsAndAboutWrapper}>
                     <div className={s.posts}>
-                        <MyPosts />
+                        <MyPostsContainer />
                     </div>
                     <div className={s.about}>
                         <div className={s.aboutUser}>Web Developer</div>
@@ -23,7 +23,7 @@ const Profile = (props) => {
                             <h2>Друзья</h2>
                             <hr/>
                             <div className={s.friends}>
-                                <Friends/>
+                                <FriendsContainer/>
                             </div>
                         </div>
                     </div>
