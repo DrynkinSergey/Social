@@ -5,9 +5,9 @@ import DialogItem from "./DialogItem/DialogItem";
 const Dialogs = (props) => {
     /*Создаем массив сообщений путем маппинга, мапим каждый элемент из старого массива в новый, проходим по каждому
     * Message и берем его значение, возвращаем массив MessageElements для дальнейшего использования*/
-    let messagesElements = props.dialogsPage.messages.map(message => <MessageSent message={message.message}/>);
+    let messagesElements = props.dialogsPage.messages.map(message => <MessageSent key={message.id} message={message.message}/>);
 
-    let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
+    let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem key={dialog.id} name={dialog.name} id={dialog.id}/>);
 
     let newMessageBody = props.newMessageText;
     let onMessageChange = (e) => {
