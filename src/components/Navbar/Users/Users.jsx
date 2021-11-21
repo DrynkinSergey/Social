@@ -1,26 +1,43 @@
 import React from "react";
 import s from './users.module.css';
+import axios from "axios";
+
 const Users = (props) => {
-    debugger
 
     if (props.users.length === 0) {
-        props.setUsers( [
-            {id:1, name:'Sergey',status:'Hi', followed:true, location:{city:'Moscow', country:'Russia'}},
-            {id:2, name:'Sasha',status:'Hi', followed:true, location:{city:'Moscow', country:'Russia'}},
-            {id:3, name:'Andrey',status:'Hi', followed:false, location:{city:'Kiev', country:'Ukraine'}},
-            {id:4, name:'Alice',status:'Hi', followed:true, location:{city:'Moscow', country:'Russia'}},
-       ] )
+        axios.get('https://social-network.samuraijs.com/api/1.0/users')
+            .then(response => {
+                props.setUsers(response.data.items)
+            });
     }
-    return <div>
-        {
+    return <div className={s.wrapper}>
 
-            props.users.map(user => <div key={user.id}>
-                    <span>{user.name}</span>
-                    <div>
-                        {user.followed ? <button onClick={() => {props.follow(user.id)}}>follow</button > : <button onClick={() => {props.follow(user.id)}}>Unfollow</button>}
+        <div>
+            <h1>Друзья</h1>
+            <hr/>
+            {
+                props.users.map(user =>
+                    <div className={s.userItem} key={user.id}>
+                        <div>
+                            {user.status ? <img className={s.img} src={user.imgSrc} alt=""/> :
+                                <img className={s.img} src={user.statusOfline} alt=""/>}
+                            <div className={s.info}><p className={s.userName}>{user.name}</p>
+                                <p className={s.location}>'user.location.city, user.location.country'</p></div>
+                        </div>
+                        <div className={s.btn}>
+                            {user.followed ? <button onClick={() => {
+                                props.follow(user.id)
+                            }}>Подписаться</button> : <button onClick={() => {
+                                props.follow(user.id)
+                            }}>Удалить</button>}
+                        </div>
                     </div>
-            </div>)
-        }
+                )
+            }
+        </div>
+        <div className={s.searchPanel}>
+            Поиск
+        </div>
     </div>
 
 }
