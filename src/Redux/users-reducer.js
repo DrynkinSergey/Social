@@ -1,12 +1,14 @@
 const FOLLOW = 'FOLLOW';
 const SET_USERS = 'SET-USERS';
 const SET_CURRENT_PAGE = 'SET-CURRENT-PAGE';
+const TOOGLE_IS_FETCHING = 'TOOGLE_IS_FETCHING';
 
 let initialState = {
     users: [],
     pageSize:7,
     totalUsersCount:159,
-    currentPage:1
+    currentPage:1,
+    isFetching:true
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -28,12 +30,15 @@ const usersReducer = (state = initialState, action) => {
         case SET_CURRENT_PAGE:{
             return {...state, currentPage : action.currentPage}
         }
+        case TOOGLE_IS_FETCHING:{
+            return {...state, isFetching : action.isFetching}
+        }
         default:
             return state;
 
     }
 }
-export const followAC = (userID) => {
+export const follow = (userID) => {
     return (
         {
             type:FOLLOW,
@@ -41,7 +46,7 @@ export const followAC = (userID) => {
         }
     )
 }
-export const setUsersAC = (users) => {
+export const setUsers = (users) => {
     return (
         {
             type:SET_USERS,
@@ -49,7 +54,7 @@ export const setUsersAC = (users) => {
         }
     )
 }
-export const setCurrentPageAC= (currentPage) => {
+export const setCurrentPage= (currentPage) => {
     return (
         {
             type:SET_CURRENT_PAGE,
@@ -58,5 +63,15 @@ export const setCurrentPageAC= (currentPage) => {
         }
     )
 }
+export const setIsFetching= (isFetching) => {
+    return (
+        {
+            type:TOOGLE_IS_FETCHING,
+            isFetching
+
+        }
+    )
+}
+
 
 export default usersReducer;

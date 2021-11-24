@@ -61,4 +61,10 @@
   font-weight: bold;
 
 }
-
+.preloader{
+    margin: 0 auto;
+    padding-top: 30%;
+}
+.preloader h2{
+    text-align: center;
+}
