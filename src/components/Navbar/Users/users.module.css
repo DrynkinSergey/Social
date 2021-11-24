@@ -47,3 +47,18 @@
 .btn button:hover{
     cursor: pointer;
 }
+.selectedPage{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.pageNum{
+    cursor: pointer;
+    margin-right: 5px;
+
+}
+.pageNum:hover{
+    color: red;
+  font-weight: bold;
+
+}
+

@@ -1,13 +1,12 @@
 const FOLLOW = 'FOLLOW';
 const SET_USERS = 'SET-USERS';
-
+const SET_CURRENT_PAGE = 'SET-CURRENT-PAGE';
 
 let initialState = {
-    users: [/*{id:1, name:'Sergey',status:'Hi', followed:true, location:{city:'Moscow', country:'Russia'}},
-        {id:2, name:'Sasha',status:'Hi', followed:true, location:{city:'Moscow', country:'Russia'}},
-        {id:3, name:'Andrey',status:'Hi', followed:false, location:{city:'Kiev', country:'Ukraine'}},
-        {id:4, name:'Alice',status:'Hi', followed:true, location:{city:'Moscow', country:'Russia'}},
-    */]
+    users: [],
+    pageSize:7,
+    totalUsersCount:159,
+    currentPage:1
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -24,7 +23,10 @@ const usersReducer = (state = initialState, action) => {
             }
         case SET_USERS:{
         return {...state,
-            users: [...state.users,...action.users]}
+            users: action.users}
+        }
+        case SET_CURRENT_PAGE:{
+            return {...state, currentPage : action.currentPage}
         }
         default:
             return state;
@@ -47,6 +49,14 @@ export const setUsersAC = (users) => {
         }
     )
 }
+export const setCurrentPageAC= (currentPage) => {
+    return (
+        {
+            type:SET_CURRENT_PAGE,
+            currentPage
 
+        }
+    )
+}
 
 export default usersReducer;
