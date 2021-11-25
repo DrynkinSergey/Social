@@ -3,33 +3,22 @@ import s from './profile.module.css';
 import ProfileInfoContainer from "./ProfileInfo/ProfileInfoContainer";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 import FriendsContainer from "./Friends/FriendsContainer";
+import AboutUser from "./AboutUser/AboutUser";
 
 const Profile = (props) => {
     return (
-        <div>
             <div className={s.profileWrapper}>
-                <ProfileInfoContainer  />
+                <ProfileInfoContainer/>
                 <div className={s.postsAndAboutWrapper}>
                     <div className={s.posts}>
-                        <MyPostsContainer />
+                        <MyPostsContainer/>
                     </div>
-                    <div className={s.about}>
-                        <div className={s.aboutUser}>Web Developer</div>
-                        <div className={s.aboutUser}>The Official Drynkin Sergey Social Page</div>
-                        <div className={s.aboutUser}>
-                            webDeveloper@gmail.com
-                        </div>
-                        <div className={`${s.aboutUser}`}>
-                            <h2>Друзья</h2>
-                            <hr/>
-                            <div className={s.friends}>
-                                <FriendsContainer/>
-                            </div>
-                        </div>
+                    <div>
+                        <AboutUser/>
+                        <FriendsContainer/>
                     </div>
                 </div>
             </div>
-        </div>
-    );
+            );
 }
 export default Profile;

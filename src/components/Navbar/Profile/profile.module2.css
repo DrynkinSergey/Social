@@ -51,6 +51,7 @@
     justify-content: space-between;
 }
 .posts{
+    width: 58%;
     border: 1px solid #e8eaec;
     border-radius: 5px;
 }

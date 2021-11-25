@@ -1,5 +1,6 @@
 import React from "react";
 import s from "../profile.module.css";
+import FriendsContainer from "../Friends/FriendsContainer";
 
 const ProfileInfo = (props) => {
     let newElementPost = React.createRef();
@@ -10,17 +11,16 @@ const ProfileInfo = (props) => {
     {
         let text = newElementPost.current.value;
         props.updateNewPostText(text);
-
     };
     return(
-        <div>
-
+        <div >
             <div className={s.profileWrapper}>
                 <div className={s.mainPicture}>
                     <img className={s.img}
                          src="https://www.techrepublic.com/a/hub/i/r/2021/03/08/3f6720de-e2a9-4213-b40f-1889436d92df/resize/1200x/694311317277dbe6af470ea7ea13b38e/monsitj.jpg"
                          alt=""/>
                 </div>
+
                 <div className={s.communicateUser}>
                     <div className={s.leftSide}>
                         <button className={s.btnCommunication}>Нравится</button>
@@ -32,11 +32,14 @@ const ProfileInfo = (props) => {
                     <div className={s.rightSide}>
                         <button className={s.btnSendMessage}>Сообщение</button>
                     </div>
+
+
                 </div>
                 <form action=""><textarea id='ta' ref={newElementPost} onChange={onPostChange} className={s.createPost} value={props.newPostText}/>
                 </form>
             </div>
-            </div>
+            {/*<div className={s.profileFriends}><FriendsContainer/></div>*/}
+        </div>
     )
 }
 
