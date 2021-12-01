@@ -1,6 +1,6 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-
+const SET_USER_PROFILE = 'SET-USER-PROFILE'
 let initialState = {
 
     posts: [
@@ -34,6 +34,7 @@ let initialState = {
         }
     ],
         newPostText: 'React',
+    profile: null,
     friends: [
     {name: 'Алёна', id: 1, src: "http://www.team.gsamdani.com/wp-content/uploads/2016/05/tm9.jpg"},
     {name: 'Настя', id: 2, src: "https://sriit.ac.in/tool/plugins/images/users/4.jpg"},
@@ -58,6 +59,9 @@ const profileReducer = (state = initialState, action) => {
         case UPDATE_POST_TEXT:
             return {...state,
                 newPostText : action.newText}
+        case SET_USER_PROFILE:
+            return {...state,
+                profile:action.profile}
         default:
             return state;
 
@@ -79,6 +83,16 @@ export const updateNewPostTextActionCreator = (text) => {
         }
     )
 }
+export const setUserProfile = (profile) => {
+    return (
+        {
+            type:SET_USER_PROFILE,
+            profile
+
+        }
+    )
+}
+
 
 
 export default profileReducer;

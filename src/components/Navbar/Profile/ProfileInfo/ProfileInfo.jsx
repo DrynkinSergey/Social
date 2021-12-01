@@ -1,6 +1,5 @@
 import React from "react";
 import s from "../profile.module.css";
-import FriendsContainer from "../Friends/FriendsContainer";
 
 const ProfileInfo = (props) => {
     let newElementPost = React.createRef();
@@ -13,7 +12,6 @@ const ProfileInfo = (props) => {
         props.updateNewPostText(text);
     };
     return(
-        <div >
             <div className={s.profileWrapper}>
                 <div className={s.mainPicture}>
                     <img className={s.img}
@@ -32,14 +30,10 @@ const ProfileInfo = (props) => {
                     <div className={s.rightSide}>
                         <button className={s.btnSendMessage}>Сообщение</button>
                     </div>
-
-
                 </div>
                 <form action=""><textarea id='ta' ref={newElementPost} onChange={onPostChange} className={s.createPost} value={props.newPostText}/>
                 </form>
             </div>
-            {/*<div className={s.profileFriends}><FriendsContainer/></div>*/}
-        </div>
     )
 }
 
