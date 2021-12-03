@@ -9,28 +9,28 @@ let initialState = {
             postText: "Создание страницы профиля почти готово",
             likesCount: '112,292',
             postTime: 1,
-            src: "https://cdn-st1.rtr-vesti.ru/vh/pictures/xw/293/879/9.jpg"
+            src: `https://picsum.photos/id/${getRandomInt(1000)}/200/300`
         },
         {
             id:2,
             postText: "Реакт это афигенная вещь!",
             likesCount: '11,292',
             postTime: 2,
-            src: "https://bilberrys.ru/wp-content/uploads/2019/10/00212.png"
+            src: `https://picsum.photos/id/${getRandomInt(1000)}/200/300`
         },
         {
             id:3,
             postText: "Я понял как создавать посты на странице",
             likesCount: '2,292',
             postTime: 11,
-            src: "https://media.proglib.io/wp-uploads/2018/03/EzgdmaCQuT84bgDL4fhXZS.jpg"
+            src: `https://picsum.photos/id/${getRandomInt(1000)}/200/300`
         },
         {
             id:4,
             postText: "This is my first post on page",
             likesCount: '1,292',
             postTime: 15,
-            src: "https://senior.ua/storage/article/content/4c87f7c1-6bb1-4831-98e7-f926b547ee48.jpeg"
+            src: `https://picsum.photos/id/${getRandomInt(1000)}/200/300`
         }
     ],
         newPostText: 'React',
@@ -42,6 +42,11 @@ let initialState = {
 ]
 }
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
+
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST:
@@ -51,7 +56,7 @@ const profileReducer = (state = initialState, action) => {
                     postText: state.newPostText,
                     likesCount: '11,292',
                     postTime: 2,
-                    src: "https://bilberrys.ru/wp-content/uploads/2019/10/00212.png"
+                    src: `https://picsum.photos/id/${getRandomInt(1000)}/200/300`
                 },
                     ...state.posts],
                 newPostText : ''

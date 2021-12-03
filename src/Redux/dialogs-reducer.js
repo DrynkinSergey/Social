@@ -16,6 +16,13 @@ let initialState = {
         {id: 3, message: '3123123'},
         {id: 4, message: '43123123'},
         {id: 5, message: '5'},
+        {id: 6, message: '5'},
+        {id: 7, message: '5'},
+        {id: 8, message: '5'},
+        {id: 9, message: '5'},
+        {id: 19, message: '5'},
+        {id: 12, message: '5'},
+        {id: 532, message: '5'},
     ],
     newMessageText: '',
 }

@@ -1,10 +1,15 @@
 import React from "react";
 import s from "./Post.module.css";
+import Preloader from "../../../../common/Preloader/Preloader";
 
 const Post = (props) => {
+
+    if(!props.profilePage.profile) {
+        return <Preloader/>
+    }
     return (
         <div className={s.post}>
-            <img className={s.avatar} src="https://media.proglib.io/wp-uploads/2018/03/EzgdmaCQuT84bgDL4fhXZS.jpg"
+            <img className={s.avatar} src={props.profilePage.profile.photos.small}
                  alt=""/>
             <div className={s.userName}>Drynkin Sergey</div>
             <div className={s.timeOfPost}>{props.postTime}hr</div>

@@ -4,6 +4,7 @@
 .wrapper{
     display: grid;
     grid-template-columns:  1fr  250px;
+    padding: 0 15px;
 }
 .searchPanel{
     background-color: green;

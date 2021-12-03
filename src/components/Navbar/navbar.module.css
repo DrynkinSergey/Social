@@ -10,16 +10,15 @@
 .nav div{
     margin-bottom: 20px;
 
+
 }
 .nav div:hover{
-    color: red;
     cursor: pointer;
 }
-.nav div:nth-child(1){
+
+.active {
+    display: inherit;
     background-color: #f6f7f9;
     font-weight: bold;
     border: 1px solid #e8eaec;
-}
-.nav .active {
-
 }

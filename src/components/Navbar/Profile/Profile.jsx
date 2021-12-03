@@ -6,7 +6,7 @@ import MyPosts from "./MyPosts/MyPosts";
 import Friends from "./Friends/Friends";
 
 const Profile = (props) => {
-debugger
+
     return (
             <div className={s.profileWrapper}>
                 <ProfileInfoContainer/>
@@ -15,7 +15,7 @@ debugger
                         <MyPosts profilePage={props.profilePage}/>
                     </div>
                     <div>
-                        <AboutUser/>
+                        <AboutUser profile={props.profile}/>
                         <Friends friends={props.friends}/>
                     </div>
                 </div>
