@@ -1,8 +1,11 @@
 import React from "react";
 import s from './header.module.css';
+import {NavLink} from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
+    debugger
     return (
+
         <header className={s.header}>
             <div className={s.wrapper}>
                 <div className={s.logo}>
@@ -12,7 +15,9 @@ const Header = () => {
                     <input type="text" placeholder='Поиск...'/>
                 </div>
                 <div className={s.auth}>
-                    <button>Войти</button>
+                    {props.isAuth ? <span> {props.login} </span>
+                        : <NavLink to={'/login'}>Войти</NavLink>
+                    }
                     | <button>Зарегистрироваться</button>
                 </div>
 

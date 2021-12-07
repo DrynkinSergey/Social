@@ -32,6 +32,10 @@
 .auth{
     color: white;
 }
+.auth a {
+    color: white;
+    padding-right: 10px;
+}
 .auth button{
     color: white;
     padding-right: 10px;
