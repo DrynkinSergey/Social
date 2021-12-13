@@ -3,8 +3,8 @@ import {userAPI} from "../api/api";
 const FOLLOW = 'FOLLOW';
 const SET_USERS = 'SET-USERS';
 const SET_CURRENT_PAGE = 'SET-CURRENT-PAGE';
-const TOOGLE_IS_FETCHING = 'TOOGLE_IS_FETCHING';
-const TOOGLE_IS_FOLLOWING_PROGRES = 'TOOGLE_IS_FOLLOWING_PROGRES';
+const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
+const TOGGLE_IS_FOLLOWING_PROGRESS = 'TOGGLE_IS_FOLLOWING_PROGRESS';
 
 let initialState = {
     users: [],
@@ -34,10 +34,10 @@ const usersReducer = (state = initialState, action) => {
         case SET_CURRENT_PAGE:{
             return {...state, currentPage : action.currentPage}
         }
-        case TOOGLE_IS_FETCHING:{
+        case TOGGLE_IS_FETCHING:{
             return {...state, isFetching : action.isFetching}
         }
-        case TOOGLE_IS_FOLLOWING_PROGRES:{
+        case TOGGLE_IS_FOLLOWING_PROGRESS:{
             return {...state, followingInProgress : action.isFetching
                     ? [...state.followingInProgress, action.userId]
         :state.followingInProgress.filter(id => id != action.userId)
@@ -76,7 +76,7 @@ export const setCurrentPage= (currentPage) => {
 export const setIsFetching= (isFetching) => {
     return (
         {
-            type:TOOGLE_IS_FETCHING,
+            type:TOGGLE_IS_FETCHING,
             isFetching
 
         }
@@ -85,7 +85,7 @@ export const setIsFetching= (isFetching) => {
 export const toggleFollowingProgress= (isFetching, userId) => {
     return (
         {
-            type:TOOGLE_IS_FOLLOWING_PROGRES,
+            type:TOGGLE_IS_FOLLOWING_PROGRESS,
             isFetching,
             userId
 
@@ -98,6 +98,7 @@ export const getUsers = (currentPage,pageSize) => {
     return (dispatch) =>{
         dispatch(setIsFetching(true));
         userAPI.getUsers(currentPage, pageSize).then(response => {
+            dispatch(setCurrentPage(currentPage))
             dispatch(setIsFetching(false));
             dispatch(setUsers(response.items))
         });

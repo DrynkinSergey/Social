@@ -1,3 +1,5 @@
+import {profileAPI} from "../api/api";
+
 const ADD_POST = 'ADD-POST';
 const UPDATE_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET-USER-PROFILE'
@@ -36,7 +38,7 @@ let initialState = {
         newPostText: 'React',
     profile: null,
     friends: [
-    {name: 'Алёна', id: 1, src: "http://www.team.gsamdani.com/wp-content/uploads/2016/05/tm9.jpg"},
+    {name: 'Алёна', id: 1, src: "https://sriit.ac.in/tool/plugins/images/users/4.jpg"},
     {name: 'Настя', id: 2, src: "https://sriit.ac.in/tool/plugins/images/users/4.jpg"},
     {name: 'Толик', id: 3, src: "https://karchitects.com.ua/wp-content/uploads/2018/04/user-img-1.png"}
 ]
@@ -96,6 +98,15 @@ export const setUserProfile = (profile) => {
 
         }
     )
+}
+export const getProfile = (userId) => {
+    return (dispatch) =>{
+        profileAPI.getProfilePage(userId)
+        .then(response => {
+                dispatch(setUserProfile(response.data))
+            });
+    }
+
 }
 
 

@@ -2,8 +2,6 @@ import React from "react";
 import s from "./users.module.css";
 import Preloader from "../../common/Preloader/Preloader";
 import {NavLink} from "react-router-dom";
-import axios from "axios";
-import {userAPI} from "../../../api/api";
 
 let Users = (props) => {
     let pageCount = Math.ceil(props.totalUsersCount / props.pageSize);
