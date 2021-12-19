@@ -9,7 +9,6 @@ const Dialogs = (props) => {
 
     let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem key={dialog.id} name={dialog.name} id={dialog.id}/>);
 
-    let newMessageBody = props.newMessageText;
     let onMessageChange = (e) => {
         let body = e.target.value;
         props.onMessageChange(body);
@@ -19,7 +18,6 @@ const Dialogs = (props) => {
         props.dialogsPage.newMessageText=''
         console.log(props.dialogsPage.newMessageText)
     }
-
     return (
         <div className={s.dialogsWrapper}>
             <div className={s.friendsList}>
