@@ -1,6 +1,7 @@
 import React from "react";
 import s from "../profile.module.css";
 import Preloader from "../../../common/Preloader/Preloader";
+import ProfileStatus from "./ProfileStatus";
 
 let AboutUser = (props) => {
     if(!props.profile) {
@@ -9,6 +10,7 @@ let AboutUser = (props) => {
 
     return(
         <div>
+            <ProfileStatus status={'sdsfafss'}/>
             <div className={s.aboutUser}>{props.profile.aboutMe}
                </div>
                 <div className={s.aboutUser}>The Official Drynkin Sergey Social Page</div>
