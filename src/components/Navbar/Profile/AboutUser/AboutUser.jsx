@@ -7,10 +7,9 @@ let AboutUser = (props) => {
     if(!props.profile) {
         return <Preloader/>
     }
-
     return(
         <div>
-            <ProfileStatus status={'sdsfafss'}/>
+            <ProfileStatus updateStatus={props.updateStatus} status={props.status} />
             <div className={s.aboutUser}>{props.profile.aboutMe}
                </div>
                 <div className={s.aboutUser}>The Official Drynkin Sergey Social Page</div>

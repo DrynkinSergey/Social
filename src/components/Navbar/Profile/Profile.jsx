@@ -14,7 +14,7 @@ const Profile = (props) => {
                         <MyPosts profilePage={props.profilePage}/>
                     </div>
                     <div>
-                        <AboutUser profile={props.profile}/>
+                        <AboutUser status={props.status} updateStatus={props.updateStatus} profile={props.profile}/>
                         <Friends friends={props.friends}/>
                     </div>
                 </div>
