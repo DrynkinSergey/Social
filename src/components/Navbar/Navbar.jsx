@@ -8,13 +8,16 @@ const Navbar = () => {
         <div>
             <nav className={s.nav}>
                 <div className={s.item}>
-                    <NavLink to='/Profile/2' activeClassName={s.active}>Профиль</NavLink>
+                    <NavLink to='/Profile/20911' activeClassName={s.active}>Профиль</NavLink>
                 </div>
                 <div className={s.item}>
                     <NavLink to='/Dialogs' activeClassName={s.active}>Сообщения</NavLink>
                 </div>
                 <div className={s.item}>
                     <NavLink to='/Users' activeClassName={s.active}>Люди</NavLink>
+                </div>
+                <div className={s.item}>
+                    <NavLink to='/Login' activeClassName={s.active}>LOGIN</NavLink>
                 </div>
                 <div className={s.item}>
                     <a href="#">Новости</a>
