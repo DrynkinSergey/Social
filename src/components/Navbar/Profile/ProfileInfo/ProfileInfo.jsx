@@ -1,23 +1,29 @@
 import React from "react";
 import s from "../profile.module.css";
+import Preloader from "../../../common/Preloader/Preloader";
+import PostForm from "../PostForm";
+import PostAddReduxForm from "../PostForm";
 
 const ProfileInfo = (props) => {
-    let newElementPost = React.createRef();
+
     let addPost = () => {
         props.addPost();
     }
-    let onPostChange = () =>
-    {
-        let text = newElementPost.current.value;
-        props.updateNewPostText(text);
-    };
+
+
+
+    if(!props.profile) {
+        return <Preloader/>
+    }
     return(
             <div className={s.profileWrapper}>
                 <div className={s.mainPicture}>
-                    <img className={s.img}
-                         src="https://www.techrepublic.com/a/hub/i/r/2021/03/08/3f6720de-e2a9-4213-b40f-1889436d92df/resize/1200x/694311317277dbe6af470ea7ea13b38e/monsitj.jpg"
-                         alt=""/>
-                </div>
+                    {props.profile.photos.large ? <img className={s.img}
+                          src={props.profile.photos.large}
+                          alt=""/> : <img className={s.img}
+                          src="https://www.techrepublic.com/a/hub/i/r/2021/03/08/3f6720de-e2a9-4213-b40f-1889436d92df/resize/1200x/694311317277dbe6af470ea7ea13b38e/monsitj.jpg"
+                          alt=""/>}
+                        </div>
 
                 <div className={s.communicateUser}>
                     <div className={s.leftSide}>
@@ -31,8 +37,7 @@ const ProfileInfo = (props) => {
                         <button className={s.btnSendMessage}>Сообщение</button>
                     </div>
                 </div>
-                <form action=""><textarea id='ta' ref={newElementPost} onChange={onPostChange} className={s.createPost} value={props.newPostText}/>
-                </form>
+                <PostAddReduxForm newPostText={props.newPostText} updateNewPostText={props.updateNewPostText}/>
             </div>
     )
 }

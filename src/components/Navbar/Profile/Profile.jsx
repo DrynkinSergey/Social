@@ -8,7 +8,7 @@ import Friends from "./Friends/Friends";
 const Profile = (props) => {
     return (
             <div className={s.profileWrapper}>
-                <ProfileInfoContainer/>
+                <ProfileInfoContainer profile={props.profile}/>
                 <div className={s.postsAndAboutWrapper}>
                     <div className={s.posts}>
                         <MyPosts profilePage={props.profilePage}/>

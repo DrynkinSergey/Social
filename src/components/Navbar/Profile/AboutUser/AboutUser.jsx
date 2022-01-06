@@ -10,7 +10,7 @@ let AboutUser = (props) => {
     return(
         <div>
             <ProfileStatus updateStatus={props.updateStatus} status={props.status} />
-            <div className={s.aboutUser}>{props.profile.aboutMe}
+            <div className={s.aboutUser}>{props.profile.aboutMe || "Нет информации"}
                </div>
                 <div className={s.aboutUser}>The Official Drynkin Sergey Social Page</div>
                 <div className={s.aboutUser}>

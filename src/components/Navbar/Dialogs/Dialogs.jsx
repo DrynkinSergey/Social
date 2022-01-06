@@ -2,21 +2,17 @@ import React from "react";
 import s from './Dialogs.module.css';
 import {MessageIncome, MessageSent} from "./Messages/Messages"
 import DialogItem from "./DialogItem/DialogItem";
+import SendMessageReactForm from "./SendMessageForm";
 const Dialogs = (props) => {
+
     /*Создаем массив сообщений путем маппинга, мапим каждый элемент из старого массива в новый, проходим по каждому
     * Message и берем его значение, возвращаем массив MessageElements для дальнейшего использования*/
     let messagesElements = props.dialogsPage.messages.map(message => <MessageSent key={message.id} message={message.message}/>);
 
     let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem key={dialog.id} name={dialog.name} id={dialog.id}/>);
 
-    let onMessageChange = (e) => {
-        let body = e.target.value;
-        props.onMessageChange(body);
-    }
-    let onSendMessageClick = () => {
-        props.onSendMessage();
-        props.dialogsPage.newMessageText=''
-        console.log(props.dialogsPage.newMessageText)
+    const onSubmit = (formData) => {
+        console.log(formData);
     }
     return (
         <div className={s.dialogsWrapper}>
@@ -30,8 +26,7 @@ const Dialogs = (props) => {
             <div className={s.dialog}>
                 <h2>Сообщения</h2>
                 <div className={s.sendMessage}>
-                    <div><textarea onChange={onMessageChange} value={props.dialogsPage.newMessageText} > </textarea></div>
-                   <div> <button onClick={ onSendMessageClick} >Отправить</button></div>
+                    <SendMessageReactForm {...props} onSubmit={onSubmit}/>
                 </div>
                 {messagesElements}
                 <MessageIncome/>
