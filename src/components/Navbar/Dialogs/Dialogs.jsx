@@ -12,7 +12,7 @@ const Dialogs = (props) => {
     let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem key={dialog.id} name={dialog.name} id={dialog.id}/>);
 
     const onSubmit = (formData) => {
-        console.log(formData);
+        props.onSendMessage(formData.newMessage);
     }
     return (
         <div className={s.dialogsWrapper}>
@@ -26,7 +26,7 @@ const Dialogs = (props) => {
             <div className={s.dialog}>
                 <h2>Сообщения</h2>
                 <div className={s.sendMessage}>
-                    <SendMessageReactForm {...props} onSubmit={onSubmit}/>
+                    <SendMessageReactForm  onSubmit={onSubmit}/>
                 </div>
                 {messagesElements}
                 <MessageIncome/>

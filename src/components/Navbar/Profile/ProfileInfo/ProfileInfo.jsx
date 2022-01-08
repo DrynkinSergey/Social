@@ -1,16 +1,12 @@
 import React from "react";
 import s from "../profile.module.css";
 import Preloader from "../../../common/Preloader/Preloader";
-import PostForm from "../PostForm";
 import PostAddReduxForm from "../PostForm";
 
 const ProfileInfo = (props) => {
-
-    let addPost = () => {
-        props.addPost();
+    const onSubmit = (formData)=> {
+        props.addPost(formData.PostText);
     }
-
-
 
     if(!props.profile) {
         return <Preloader/>
@@ -30,14 +26,14 @@ const ProfileInfo = (props) => {
                         <button className={s.btnCommunication}>Нравится</button>
                         <button className={s.btnCommunication}>Подписаться</button>
                         <button className={s.btnCommunication}>Поделиться</button>
-                        <button onClick={ addPost } className={s.btnCommunication}>Создать пост</button>
+                        <button  className={s.btnCommunication}>Создать пост</button>
                         <button className={s.btnCommunication}>...</button>
                     </div>
                     <div className={s.rightSide}>
                         <button className={s.btnSendMessage}>Сообщение</button>
                     </div>
                 </div>
-                <PostAddReduxForm newPostText={props.newPostText} updateNewPostText={props.updateNewPostText}/>
+                <PostAddReduxForm onSubmit={onSubmit}/>
             </div>
     )
 }

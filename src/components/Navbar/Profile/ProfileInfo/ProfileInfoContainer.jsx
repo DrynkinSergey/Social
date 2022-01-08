@@ -30,7 +30,7 @@ const ProfileInfoContainer = connect(mapStateToProps,mapDispatchToProps)(Profile
 export default ProfileInfoContainer;*/
 
 import React from "react";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../../Redux/profile-reducer";
+import {addPostActionCreator} from "../../../../Redux/profile-reducer";
 import ProfileInfo from "./ProfileInfo";
 import {connect} from "react-redux";
 
@@ -43,15 +43,10 @@ const mapStateToProps = (state) =>
 const mapDispatchToProps = (dispatch) =>
 {
     return{
-        addPost: () => {
-            dispatch(addPostActionCreator());
+        addPost: (PostText) => {
+            dispatch(addPostActionCreator(PostText));
 
-        },
-        updateNewPostText: (text) => {
-            let action = updateNewPostTextActionCreator(text);
-            dispatch(action);
         }
-
 
     }
 }
