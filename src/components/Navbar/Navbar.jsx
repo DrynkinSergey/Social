@@ -2,13 +2,13 @@ import React from "react";
 import s from './navbar.module.css';
 import {NavLink} from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
 
     return (
         <div>
             <nav className={s.nav}>
                 <div className={s.item}>
-                    <NavLink to='/Profile/20911' activeClassName={s.active}>Профиль</NavLink>
+                    <NavLink to='/Profile' activeClassName={s.active}>Профиль</NavLink>
                 </div>
                 <div className={s.item}>
                     <NavLink to='/Dialogs' activeClassName={s.active}>Сообщения</NavLink>
@@ -16,9 +16,9 @@ const Navbar = () => {
                 <div className={s.item}>
                     <NavLink to='/Users' activeClassName={s.active}>Люди</NavLink>
                 </div>
-                <div className={s.item}>
+                {/*<div className={s.item}>
                     <NavLink to='/Login' activeClassName={s.active}>LOGIN</NavLink>
-                </div>
+                </div>*/}
                 <div className={s.item}>
                     <a href="#">Новости</a>
                 </div>

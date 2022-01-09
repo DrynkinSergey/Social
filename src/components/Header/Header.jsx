@@ -14,10 +14,9 @@ const Header = (props) => {
                     <input type="text" placeholder='Поиск...'/>
                 </div>
                 <div className={s.auth}>
-                    {props.isAuth ? <span> {props.login} </span>
+                    {props.isAuth ? <div><span> {props.login} </span>  | <button onClick={props.logout}>Выйти</button> </div>
                         : <NavLink to={'/login'}>Войти</NavLink>
                     }
-                    | <button>Зарегистрироваться</button>
                 </div>
 
             </div>

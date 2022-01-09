@@ -1,15 +1,25 @@
 import React from 'react';
 import LoginReduxForm from "./LoginForm";
+import {connect} from "react-redux";
+import {login} from "../../Redux/auth-reducer";
+import {Redirect} from "react-router-dom";
 
-const Login = () => {
+const Login = (props) => {
     const onSubmit = (formData) => {
-        console.log(formData);
+        props.login(formData.email, formData.password, formData.rememberMe);
     }
+    if(props.isAuth) {
+        return <Redirect to={"/Profile/20911"}/>
+    }
+
     return    <div>
     <h1>LOGIN</h1>
     <LoginReduxForm onSubmit={onSubmit}/>
     </div>
 }
+const mapStateToProps = (state) => ({
+    isAuth:state.auth.isAuth
+})
 
 
-export default Login;
+export default connect(mapStateToProps,{login})(Login) ;
