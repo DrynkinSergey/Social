@@ -1,10 +1,10 @@
+/*
 import React from "react";
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {getProfile, getStatus, updateStatus} from "../../../Redux/profile-reducer";
+import {getProfilePage, getStatus, updateStatus} from "../../../Redux/profile-reducer";
 import {withRouter} from 'react-router-dom';
 import {compose} from "redux";
-
 class ProfileContainer extends React.Component{
     componentDidMount() {
         let userId=this.props.match.params.userId;
@@ -15,7 +15,7 @@ class ProfileContainer extends React.Component{
                 this.props.history.push("/login");
             }
         }
-        this.props.getProfile(userId)
+        this.props.getProfilePage(userId)
         this.props.getStatus(userId)
     }
     render() {
@@ -43,6 +43,38 @@ let mapStateToProps = (state) => ({
 });
 
 export default compose(
-    connect (mapStateToProps, {getProfile, getStatus, updateStatus}),
+    connect (mapStateToProps, {getProfilePage, getStatus, updateStatus}),
     withRouter
+)(ProfileContainer)*/
+import React, {useEffect} from "react";
+import Profile from "./Profile";
+import {connect} from "react-redux";
+import {getProfilePage, getStatus, updateStatus} from "../../../Redux/profile-reducer";
+import {useParams} from 'react-router-dom';
+import {compose} from "redux";
+    const ProfileContainer = (props) => {
+      let {userId} = useParams()
+        useEffect( () => {
+            userId = userId || props.authUserId
+            if (userId) {
+                props.getProfilePage(userId)
+                props.getStatus(userId)
+            }
+        }, [userId, props.authUserId])
+
+        return   <Profile {...props}/>
+
+}
+
+let mapStateToProps = (state) => ({
+    profile:state.profilePage.profile,
+    profilePage: state.profilePage,
+    friends:state.profilePage.friends,
+    status:state.profilePage.status,
+    authUserId:state.auth.userId,
+    isAuth:state.auth.isAuth
+});
+
+export default compose(
+    connect (mapStateToProps, {getProfilePage,getStatus, updateStatus}),
 )(ProfileContainer)

@@ -9,7 +9,7 @@ const Login = (props) => {
         props.login(formData.email, formData.password, formData.rememberMe);
     }
     if(props.isAuth) {
-        return <Redirect to={"/Profile/20911"}/>
+        return <Redirect to={"/Profile/"}/>
     }
 
     return    <div>

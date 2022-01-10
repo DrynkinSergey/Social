@@ -31,7 +31,9 @@ let Users = (props) => {
                                         </NavLink>
                                         :
                                         <NavLink to={'Profile/' + user.id}>
-                                            <img className={s.img} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJI-OEIhwP1mEqO7SIM0KXeEYhU1NrOt84pM8XkESjzN8AxkBtEjlDBVz4iooBxSV9zzY&usqp=CAU" alt=""/>
+                                            <img className={s.img}
+                                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJI-OEIhwP1mEqO7SIM0KXeEYhU1NrOt84pM8XkESjzN8AxkBtEjlDBVz4iooBxSV9zzY&usqp=CAU"
+                                                 alt=""/>
                                         </NavLink>}
                                     <div className={s.info}><p className={s.userName}>{user.name}</p>
                                         <p className={s.location}>{user.status}</p></div>
